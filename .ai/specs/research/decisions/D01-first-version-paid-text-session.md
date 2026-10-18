@@ -1,0 +1,7 @@
+# D01 — The first version is a paid 25/50-minute text session; vault, subscription and MCP come later
+- Date, owner: 2026-10-18, founder A (decider named in the 2026-08-26 workshop); confirmed in the om-discover session on that date
+- Context and the options weighed: (a) a paid text session a mentee books with a mentor for a specific blocker; (b) the mentor-owned vault and MCP access first; (c) both within the 25-hour build limit. The agent recommended (a) because it is the job both mentees and mentors described unprompted in the interviews of 2026-08-20 to 2026-09-03; the cost named at the time was that the vault, the founders' stated differentiator, goes untested.
+- Decision and why: (a). Founder A: wants to validate quickly what users actually want to test, without complicating the architecture with the vault at this stage. Origin: an agent recommendation, accepted by founder A; the belief that mentees will pay for it is not evidence and stays an assumption (A01).
+- Consequences, and what would make us revisit it: vault subscription, MCP access, the 24-hour async tier and AI answers move to Later. Revisit when D02 is decided either way, or when a new mentee or mentor asks unprompted for saved answers. The interest in notes that two mentors showed in interviews before 2026-10-18 (2026-08-22, 2026-09-03 Python) was known when D01 was made and does not by itself trigger a revisit; agent wording, to be confirmed by founder A.
+- Required path to change: a superseding record by founder A.
+- Status: active
