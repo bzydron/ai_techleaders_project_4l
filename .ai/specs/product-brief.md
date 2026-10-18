@@ -1,156 +1,148 @@
-# DevMentor — product brief
+# DevMentor: wybór sesji z mentorem
 
-- Date: 2026-10-18
-- Mode: own; Owner: founder A (decider, workshop 2026-08-26); Pass: full (one interview round, skeptic read)
-- Evidence basis: 7 interviews (4 developers who get stuck, 3 senior engineers who answer questions), one 14-day Discord export (109 help threads), one 54-response survey on the same Discord, two founder-run documents (workshop, board exports), five benchmark checks dated 2026-09-04. All interviewees came through the founders' networks and invitation list; the Discord export and survey come from one community. Most consequential untested belief: that developers who say they would pay for a fast text answer will pay (A01); 3 of 54 survey respondents ever paid anyone.
-- Coverage: 47 claims — 42 sourced (interview 16, data 5, document 15, product 1, benchmark 5), 0 synthetic, 5 assumed; 1 entries on the collection plan
-- Synthetic hypotheses outside Coverage: 0
-- Definition of Ready signed by: not yet signed — founder A decided scope and the stop line; the test group, launch date, how a mentee reaches a mentor, mentor price and terms are open (Q01, Q02, Q04, Q05, Q06); ready for: a named experiment, not implementation planning
-- Sources: `.ai/specs/research/` (interviews 2026-08-20 to 2026-09-03; `2026-08-26-workshop-export.md`; `2026-09-04-discord-help-requests.csv`; `2026-09-04-survey-discord-willingness-to-pay.md`; `2026-09-04-benchmark-*.md`; Miro exports 2026-09-02 to 2026-09-05; `decisions/`), `.ai/specs/implemented/2026-09-01-devmentor-monorepo-bootstrap.md`
+- Date: 2026-09-24; odświeżony 2026-10-18
+- Mode: own
+- Status: odświeżony po dwóch sesjach `om-synthetic-users` (2026-10-18). Wyniki syntetyczne są tylko w sekcji Hypotheses.
+- Zakres: wycinek opisu produktu przygotowany na podstawie dołączonych materiałów. Nie zastępuje pełnego briefu ani aktualnego stanu aplikacji.
+- Pochodzenie: [SOURCES.md](research/SOURCES.md). Notatki i decyzje są materiałami dostarczonymi. Nie potwierdzono niezależnie opisanych rozmów.
+- Evidence basis: dwie notatki od dwóch osób (pilny problem przed wydaniem; niepilny problem rozwiązany samodzielnie) i zapisy decyzji D07, D09, D21, D22, D27, N01, N02. D21, D22 i D27 zapisano z rekomendacji agenta; osoba prowadząca sesję 2026-10-18 zgłosiła w sesji, że założyciel A je potwierdził (bez podpisanego zapisu, D28). Najbardziej istotne nieprzetestowane założenie: A02.
+- Coverage: 31 claims — 23 sourced (interview 5, data 0, document 18, product 0, benchmark 0), 0 synthetic, 8 assumed; 3 entries on the collection plan
+- Synthetic hypotheses outside Coverage: 3
+- Definition of Ready signed by: nie podpisane; podpis należy do założyciela A (D28); gotowość: zbieranie materiału (Now), nie planowanie implementacji.
+- Sources: [SOURCES.md](research/SOURCES.md); raporty paneli w `research/walkthroughs/` (tylko Hypotheses).
 
 ## Decision summary
 
-Founder A decided the first version is a paid 25 or 50-minute text session between a developer with a specific blocker and a senior engineer who has solved it (D01), with the vault, subscription and MCP access deferred. The decision is made; its basis is partly evidence and partly a bet.
+Ćwiczenie ma wskazać możliwe bariery przy ocenie oferty i wyborze sesji. Nie rozstrzyga o budowie ani o popycie (Goals).
 
-Developers describe being stuck on a deadline with nobody to ask, and the Discord export shows the community often fails them: 21% of threads got no reply and the median wait for a first reply was 67 minutes (see Problems). Three of four developer interviewees wanted an answer within the hour or the same day, and for a bug three accepted text (the freelancer wants a call for estimates). Two of three senior engineers would consider answering in text if they see the question first (Problems, Target group).
+Podstawa to dwie notatki od dwóch osób i zapisy decyzji. Dwie sesje panelu syntetycznego, po jednym przebiegu i z dwiema personami, dały trzy hipotezy H1–H3. Żadna nie jest ustaleniem: jeden przebieg, a każda persona wynika z jednej notatki.
 
-The biggest uncertainty is a mismatch: the need is speed (20 minutes to a day, one blocker arose on a Friday evening), but Now is a bookable 25/50-minute slot, and nothing says when invited mentors can answer (A03). The stop line (D02) measures a booking, not speed, and "paid session" can be met by one booking. Willingness to pay is stated (69% in the survey), not observed (3 of 54 ever paid).
+Najbardziej mogą zmienić ocenę: czy kolejność po dostępności, z profilem mentora albo bez niego, pozwala wybrać mentora (H1, A02: czy płatna konsultacja pasuje do problemu) i co się dzieje, gdy żaden termin nie pasuje (H3, A04: czy termin pozwala dostać pomoc, gdy jest jeszcze użyteczna). Decyzja D28, wybrana w sesji 2026-10-18 na podstawie rekomendacji agenta: Now to zbieranie materiału, a planowanie implementacji wycinka czeka na wyniki rozmów i na podpis Definition of Ready (DoR). Następny krok to trzy rozmowy z Collection plan; ich właścicielem jest założyciel A, termin jest nieznany. D21, D22 i D27: osoba prowadząca sesję zgłosiła potwierdzenie przez założyciela A; podpisanego zapisu nie ma.
 
-Next: before building, founder A defines the test group, the launch date and how a mentee reaches a mentor (Q01, Q02, Q04); the founders collect mentor rate and answering hours from the first invitees (Q05, collection plan); someone takes the terms of service (Q06).
+## Product
 
-## Vision
+DevMentor pozwala deweloperowi znaleźć mentora i wybrać termin konsultacji. Mentor publikuje ofertę i dostępne terminy. Użytkownik może przejść z listy mentorów albo przez link do konkretnego profilu. `[DOCUMENT]` [D21](research/decisions/D21-finding-a-mentor.md)
 
-For developers stuck on a specific blocker and seniors who answer such questions for free: an answer from someone who has done it, and income for the senior. The founders' board states it as turning private conversations into paid, mentor-owned knowledge; that is the team's direction, and the knowledge part is deferred by D01. `[DOCUMENT]` `2026-09-02-miro-board-vision-target-needs.md`
+Sesja trwa 25 albo 50 minut. Mentor ustala ceny obu długości w granicach operatora. W tym wycinku nie wskazujemy konkretnej oferty cenowej. `[DOCUMENT]` [D09](research/decisions/D09-pricing.md)
 
-## Target group and stakeholders
+Można wybrać opublikowany termin rozpoczynający się co najmniej dwie godziny po rezerwacji. Nie oznacza to gwarancji wolnego terminu dokładnie za dwie godziny. `[DOCUMENT]` [D22](research/decisions/D22-session-timing.md)
 
-- Customer (pays): a working developer; of 4 developer interviewees, the freelancer would pay from their own pocket (below 200, the currency was not asked), the fintech backend developer first said the company and ended on "sam bym zapłacił. chyba" (unresolved), the platform developer only if the employer pays, and the working developer said "I'd pay for speed, not for a subscription" (who pays was not asked). `[INTERVIEW]` 2026-08-20, 2026-09-01, 2026-09-02 (freelancer), 2026-09-02 (platform dev)
-- Customer (pays), survey: 24 of 54 would pay out of their own pocket, 19 would ask their employer (13 asking, 6 without asking), 2 their client, 9 nobody. `[DATA]` `2026-09-04-survey-discord-willingness-to-pay.md`, one Discord, 2026-08-29 to 2026-09-03
-- User (uses): a developer with a concrete blocker and no senior at hand, as in three interviews (working developer, fintech backend, freelancer); the platform developer works at a 200-person company with an internal channel and would not pay. `[INTERVIEW]` 2026-08-20, 2026-09-01, 2026-09-02 (freelancer), 2026-09-02 (platform dev)
-- User (answers): a senior engineer who already answers the same questions unpaid (3 interviews); the staff engineer declined monthly mentoring ("nie chcę relacji"), the others were not asked. `[INTERVIEW]` 2026-08-22, 2026-09-03 (Python), 2026-09-03 (staff engineer)
-- Stakeholders: founder A (sponsor, product owner, UX/UI), founder B (tech lead, project manager, developers); Stripe for payments; QA and legal have no person behind them yet. `[DOCUMENT]` `2026-09-05-miro-board-raci-matrix.md`
-- Decider for scope decisions: founder A. `[DOCUMENT]` `2026-08-26-workshop-export.md`
+Konsultacja ma formę tekstową i odbywa się w ekranie sesji wewnątrz DevMentora. `[DOCUMENT]` [N01](research/decisions/N01-no-video.md), [D27](research/decisions/D27-session-channel.md)
 
-## Problems, with evidence
+## Target group
 
-- A developer stuck on a release-critical error found no timely answer: an hour of search, a Discord answer on Saturday that was wrong, rollback, release slipped from Monday to Tuesday. One account. `[INTERVIEW]` 2026-09-01
-- A freelancer sent a migration estimate that was too low after two evenings of reading and a Discord reply of "it depends", losing about a week of unpaid time. One account. `[INTERVIEW]` 2026-09-02 (freelancer)
-- A developer lost half a day to a TypeScript error the day before a release, with two contradictory answers from a Discord and a workaround shipped. One account. `[INTERVIEW]` 2026-08-20
-- Counter-case: a platform developer solved a half-day blocker alone and would pay only for a once-only, day-long task, found within five minutes, answered within an hour, and paid by the employer. One account. `[INTERVIEW]` 2026-09-02 (platform dev)
-- Prior paid help: the fintech developer paid Codementor once about two years ago (40 minutes to find someone, then a call whose microphone failed); the working developer bought a course; the freelancer and the platform developer had paid for no help. Four accounts. `[INTERVIEW]` 2026-09-01, 2026-08-20, 2026-09-02 (freelancer), 2026-09-02 (platform dev)
-- In 14 days, 109 help threads were posted on one developer Discord: 23 (21%) got no human reply; among the 86 answered, the median first reply took 67 minutes; 31 (28%) carried an urgency signal such as "release tomorrow", of which 9 got no reply. `[DATA]` `2026-09-04-discord-help-requests.csv`, #help channels, 2026-08-18 to 2026-08-31, topic and resolution labels assigned by founder B
-- Only 35 of the 109 threads (32%) ended with the poster saying it was solved; 20 partially. `[DATA]` `2026-09-04-discord-help-requests.csv`, same period and filter
-- In the survey, 30 of 54 were stuck this week or this month; asked what they did the last time (all 54, multiple choice), they searched (49), asked an AI (38), asked a community (31), asked a friend (26), shipped a workaround (20), paid someone (3). `[DATA]` `2026-09-04-survey-discord-willingness-to-pay.md`, one Discord, self-selected
-- On the answering side, a mentor answers the same three questions a month for free from a private notes file; a Python speaker answers weekly in DMs from a paste doc; a staff engineer is asked constantly on Slack and answers only interesting ones. `[INTERVIEW]` 2026-08-22, 2026-09-03 (Python), 2026-09-03 (staff engineer)
-- The need is a quick answer, not a learning path; the interviewees did not want a subscription (working developer, platform developer), community or mentorship journey (freelancer), or saved answers (fintech and platform developers). That the need is the same for developers beyond these four is not established. `[INTERVIEW]` 2026-08-20, 2026-09-01, 2026-09-02 (freelancer), 2026-09-02 (platform dev)
-- Conditions in the account: the fintech developer would pay if a mentor replied within twenty minutes and booking took under five; the freelancer needed it the same day and the price before writing anything; the working developer wanted it "within the hour"; the platform developer, within five minutes of searching and an hour of answer. `[INTERVIEW]` 2026-09-01, 2026-09-02 (freelancer), 2026-08-20, 2026-09-02 (platform dev)
+- Deweloper z pilnym problemem przy wydaniu produktu, bez dostępnej pomocy seniora. Podstawą tej perspektywy jest jedna dostarczona notatka. `[INTERVIEW]` [working-dev](research/2026-08-20-interview-working-dev.md)
+- Deweloper z niepilnym problemem konfiguracji, dla którego samodzielne rozwiązanie i pomoc wewnątrz zespołu pozostają alternatywą. Podstawą tej perspektywy jest osobna dostarczona notatka. `[INTERVIEW]` [platform-dev](research/2026-09-02-interview-platform-dev-solves-alone.md)
 
-## Product and how it stands out
+Nie znamy udziałów tych sytuacji w populacji ani częstości korzystania z płatnej pomocy. Dobór panelu demonstracyjnego nie jest próbą reprezentatywną. `[ASSUMPTION]` Brak danych o proporcjach.
 
-- What it is: a marketplace where a developer books a paid 25 or 50-minute text session with a senior engineer; details in Scope. `[DOCUMENT]` `decisions/D01-first-version-paid-text-session.md`
-- What makes it different: Now has no sourced advantage over Codementor except what the interviews asked for, text first and no ratings; the vault differentiator is deferred. `[ASSUMPTION]` the founders' board claims a gap that nobody sells mentor-owned knowledge (`2026-09-02-miro-board-competitors-benchmark.md`); tested by A01
-- What exists in the repository today: a monorepo skeleton with placeholder User and MentorProfile entities; no booking, scheduling or payments. `[PRODUCT]` `.ai/specs/implemented/2026-09-01-devmentor-monorepo-bootstrap.md`, `packages/db/src/entities/`
-- Alternatives developers use today: 38 of 54 asked an AI assistant and 31 a community the last time they were stuck; 20 shipped a workaround and 9 gave up on the approach. `[DATA]` `2026-09-04-survey-discord-willingness-to-pay.md`
+## Problems
 
-| reference | what it does well | where it falls short for our users | checked on | link |
-|---|---|---|---|---|
-| Codementor | request-to-live-session is the whole product; rates $15 to $80 per 15 min on 10 cards `[BENCHMARK]` | nothing kept after a session; all ten cards show 5.0, so ratings carry no information | 2026-09-04 | https://www.codementor.io/react-experts |
-| MentorCruise | free intro call before payment; 7,200 mentors `[BENCHMARK]` | monthly commitment; "Starting from $100 /month"; 97% of exit ratings are 5 stars | 2026-09-04 | https://mentorcruise.com/ |
-| ADPList | 36,000+ experts, booking in minutes `[BENCHMARK]` | free for mentees, mentor earnings not stated; career help more than code | 2026-09-04 | https://adplist.org/ |
-| Topmate | expert's own link and price; 10% commission on own link, 20% on marketplace customers `[BENCHMARK]` | any profession; no way to find an expert by problem | 2026-09-04 | https://topmate.io/pricing |
-| Preply | trial then subscribe; free cancellation up to 12 hours before `[BENCHMARK]` | recurring lessons, not one-off; ratings as the trust signal | 2026-09-04 | https://preply.com/en/how-it-works |
+W notatce working-dev błąd TypeScript pojawia się przed wydaniem produktu, a senior jest nieobecny. Po 40 minutach szukania i dwóch sprzecznych odpowiedziach na Discordzie opisano obejście problemu z TODO. Notatka zawiera potrzebę pomocy „within the hour”; znaczenie tego czasu wymaga doprecyzowania. `[INTERVIEW]` [working-dev](research/2026-08-20-interview-working-dev.md)
 
-## Goals and success criteria
+W notatce platform-dev opisano problem z konfiguracją reguł linta i samodzielne dojście do rozwiązania. Materiał wskazuje małą pilność tego epizodu. Warunkowe odpowiedzi o innym, trudniejszym problemie nie są obserwacją zakupu. `[INTERVIEW]` [platform-dev](research/2026-09-02-interview-platform-dev-solves-alone.md)
 
-- Business goal: validate with real users that mentors accept requests and mentees pay for text sessions before building the vault; chosen by founder A. `[DOCUMENT]` `decisions/D01-first-version-paid-text-session.md`
-- Business goal (deferred): the board's goals (100 mentors with published vaults in year one, 30% of mentees on a vault subscription) depend on the vault and are not tested by D01. `[DOCUMENT]` `2026-09-02-miro-board-product-goals.md`
-- User outcome: an answer from someone who has done the same thing within the time the interviewees named (twenty minutes to the same day). `[INTERVIEW]` 2026-09-01, 2026-09-02 (freelancer), 2026-08-20
-- Primary metric, baseline today, threshold, date: paid sessions booked by the test group in the two weeks after launch; baseline 0 (nothing is built); stop if none, per D02; no success threshold and no launch date exist (Q02, Q03). `[DOCUMENT]` `decisions/D02-stop-criterion-two-weeks.md`
-- What must not get worse: trust of mentees and mentors in what is published, per R02; no ratings, per N02. `[DOCUMENT]` `2026-08-26-workshop-export.md`
+## Goals
 
-## Scope
+Cel demonstracyjnej analizy: poznać możliwe bariery podczas oceny oferty i wyboru sesji. `[ASSUMPTION]` Zakres ćwiczenia, bez zadanej z góry odpowiedzi.
 
-- **Now:** a proposed experiment, not a complete product: a mentee sends a request with the question to a mentor; the mentor accepts or not; the mentee pays and gets a 25 or 50-minute text session; bounded by R01, R02, N01, N02 and D03. How the mentee reaches the mentor is open (Q04).
-- **Later:** vault subscription, MCP access, the 24-hour async tier, AI answers, session notes published to a vault (D01; R02 applies); commission and revenue streams beyond sessions (Q07).
-- **Not doing:** see Non-goals.
-
-## Domain glossary
-
-| Term | Meaning | Owned by | Visible to |
-|---|---|---|---|
-| Session | a paid 25 or 50-minute text exchange between one mentee and one mentor | founder A | mentee, mentor |
-| Request | the mentee's question and context, sent before the session; senior engineers asked to see it before accepting `[INTERVIEW]` 2026-09-03 (Python), 2026-09-03 (staff engineer) | pending | the addressed mentor |
-| Test group | the mentees whose booking decides D02; membership not yet defined (Q01) | founder A | founders |
-| Vault | a mentor's published notes sold as a subscription; deferred | founder A | not applicable in Now |
+Wynik analizy ma pomóc przygotować pytania do sprawdzenia z ludźmi. Nie określa prognozy sprzedaży ani poziomu popytu. `[ASSUMPTION]` Sposób wykorzystania wyniku ćwiczenia.
 
 ## Key flows
 
-- Current state: stuck, searches docs and issues, asks a community or an AI or a friend, waits, ships a workaround or rolls back. `[INTERVIEW]` 2026-09-01, 2026-09-02 (freelancer), 2026-08-20
-- Future state: a mentee sends a request to a mentor, the mentor sees the question and accepts, the mentee pays, the session runs in text, the mentee has the answer; the order of accept and pay, the lead time and how the mentee finds the mentor are unknown. `[ASSUMPTION]` shaped by D01, R01, N01, A03, Q04
+### Future state, booking and session (1.0), decided steps
+
+1. Użytkownik loguje się przez GitHub lub używa e-maila i hasła. `[DOCUMENT]` [D07](research/decisions/D07-login.md)
+2. Znajduje mentora na liście z filtrem po technologii albo otwiera link do jego profilu. Lista jest uporządkowana według ostatnio opublikowanej dostępności. `[DOCUMENT]` [D21](research/decisions/D21-finding-a-mentor.md)
+3. Ocenia ofertę, wybiera długość 25 albo 50 minut i odczytuje cenę ustaloną przez mentora. Konkretna cena nie jest podana w tym materiale. `[DOCUMENT]` [D09](research/decisions/D09-pricing.md)
+4. Wybiera spośród opublikowanych terminów. Wybrany start musi przypadać co najmniej dwie godziny po rezerwacji. Dokładny dostępny termin wymaga danych konkretnej oferty. `[DOCUMENT]` [D22](research/decisions/D22-session-timing.md)
+5. W umówionym terminie bierze udział w tekstowej konsultacji wewnątrz DevMentora. `[DOCUMENT]` [N01](research/decisions/N01-no-video.md), [D27](research/decisions/D27-session-channel.md)
+
+Kroki 2, 4 i 5 opierają się na D21, D22 i D27, zapisanych z rekomendacji agenta. Potwierdzenie założyciela A zgłosiła osoba prowadząca sesję; podpisanego zapisu nie ma.
+
+To narracyjny wycinek wyboru konsultacji. Nie opisuje wyglądu ekranów, obsługi płatności ani rozliczeń po sesji. Pominięcie tych elementów w ćwiczeniu nie oznacza, że produkt ich nie ma. `[ASSUMPTION]` Granice demonstracji.
 
 ## Business rules
 
-| Id | Rule | Applies to | Source | Status | Review by | Required path to change | Owner | Supersedes |
-|---|---|---|---|---|---|---|---|---|
-| R01 | Sessions are 25 or 50 minutes ("bookable in a lunch break") | session | `[DOCUMENT]` `2026-08-26-workshop-export.md` | active | unknown | superseding row by founder A | founder A | none |
-| R02 | Nothing from a session is published without the mentee's approval ("trust is the product") | session notes, vault | `[DOCUMENT]` `2026-08-26-workshop-export.md` | active | unknown | superseding row by both founders, founder A decides | both founders | none |
-| R03 | Price is shown before the mentee writes anything, and payment is taken before the session | booking | `[INTERVIEW]` 2026-09-02 (freelancer), 2026-09-03 (Python); proposed by the agent | proposal | unknown | founder A | pending | none |
-| R04 | A mentee whose mentor does not show is refunded the same day, without a ticket | booking | `[INTERVIEW]` 2026-09-02 (freelancer); proposed by the agent | proposal | unknown | founder A | pending | none |
+| ID | Reguła | Źródło |
+|---|---|---|
+| R01 | Długość konsultacji wynosi 25 albo 50 minut. | `[DOCUMENT]` [D09](research/decisions/D09-pricing.md) |
+| R02 | Mentor ustala cenę w granicach operatora. Tu nie ma konkretnego cennika oferty. | `[DOCUMENT]` [D09](research/decisions/D09-pricing.md) |
+| R03 | Najwcześniejszy dopuszczalny początek to dwie godziny po rezerwacji; dostępność zależy od opublikowanych slotów. | `[DOCUMENT]` [D22](research/decisions/D22-session-timing.md) |
+| R04 | Sesja jest tekstowa i odbywa się w produkcie. | `[DOCUMENT]` [N01](research/decisions/N01-no-video.md), [D27](research/decisions/D27-session-channel.md) |
+| R05 | Logowanie: GitHub albo e-mail i hasło. | `[DOCUMENT]` [D07](research/decisions/D07-login.md) |
+
+## Scope
+
+W ćwiczeniu analizujemy perspektywę osoby wybierającej konsultację. Korzystamy z opisu, bez przeglądarki i bez transakcji. Nie podajemy modelowi stanu ekranu, którego nie zaobserwowano. `[ASSUMPTION]` Zakres demonstracji.
+
+- **Now:** zbieranie materiału: trzy rozmowy z Collection plan, sprawdzenie H1–H3 i odpowiedzi na Q01–Q03. `[DOCUMENT]` [D28](research/decisions/D28-now-is-collecting-material.md)
+- **Later:** planowanie implementacji wycinka (lista, wybór terminu, sesja tekstowa) po wynikach rozmów i podpisie Definition of Ready; wymaga oczekiwanego wyniku i sposobu jego sprawdzenia, których brief nie ma.
+- **Not doing:** zob. Non-goals.
 
 ## Non-goals
 
-| Id | We are not building | Why | Owner | Status | Review by | Required path to change | Source | Supersedes |
-|---|---|---|---|---|---|---|---|---|
-| N01 | video calls | decided 2026-09-03; sessions are text, the product says so on every session screen; the workshop excluded video and a mentee said "text is fine, faster" (2026-08-20); the freelancer wants a call for estimates, a case N01 does not serve | founder A | active | unknown | superseding record by founder A | `[DOCUMENT]` `decisions/N01-no-video.md` | none |
-| N02 | ratings or review profiles; each mentor page links to public work instead | decided 2026-09-03; the mentor interviewee said "my GitHub is my profile", ratings were the least chosen trust signal in the survey (12 of 54), and every mentor page carries a link to public work and a plain description | founder A | active | unknown | superseding record by founder A | `[DOCUMENT]` `decisions/N02-no-ratings.md` | none |
+Poza tym wycinkiem są onboarding mentorów, wybór nowych cen, płatności, anulowanie, wypłaty i notatka po konsultacji. Analiza nie sprawdza działania interfejsu ani kodu. `[ASSUMPTION]` Zakres demonstracji.
 
-## Decisions
+Właściciel wyłączeń: założyciel A, wskazany w sesji 2026-10-18 (D28); jego akceptacji nie zapisano.
 
-| Id | Date | Decision | Why | Owner | Status | Review by | Required path to change | Source | Supersedes |
-|---|---|---|---|---|---|---|---|---|---|
-| D01 | 2026-10-18 | First version is a paid 25/50-minute text session; vault, subscription, MCP and AI answers are later | quick validation without the vault architecture; options weighed: vault first, both within 25 hours; agent recommendation accepted | founder A | active | when D02 is decided | superseding record by founder A | `[DOCUMENT]` `decisions/D01-first-version-paid-text-session.md` | none |
-| D02 | 2026-10-18 | The test fails if, within 2 weeks of launch, no mentor accepts a request or the test group books no paid session despite declared interest | stop line set by founder A | founder A | active | at the first result or when Q01 and Q02 are answered | superseding record by founder A | `[DOCUMENT]` `decisions/D02-stop-criterion-two-weeks.md` | none |
-| D03 | 2026-08-26 | The MVP is limited to 25 hours of build time and Stripe as the only payments provider; no video | workshop constraints | founder A | active | unknown | superseding row by founder A | `[DOCUMENT]` `2026-08-26-workshop-export.md` | none |
+## Domain glossary
+
+- Mentee: osoba rozważająca konsultację z mentorem.
+- Mentor: osoba publikująca ofertę konsultacji i terminy.
+- Długość sesji: czas trwania konsultacji.
+- Termin: opublikowany moment rozpoczęcia konsultacji.
+- Rezerwacja: wybór konkretnego terminu i długości w opisanym procesie.
+
+Definicje porządkują opis ćwiczenia. `[DOCUMENT]` D07, D09, D21, D22 i D27.
 
 ## Riskiest assumptions
 
-| Id | Assumption | Importance | Evidence today | If false | Smallest test | Owner | By when | Result |
-|---|---|---|---|---|---|---|---|---|
-| A01 | Developers who say they would pay for a fast text answer will pay for a booked session `[ASSUMPTION]` origin: the survey's 37 of 54 and interviews | high | stated: 37 of 54 would pay something, 23 would pay 25 EUR or more; observed: 3 of 54 ever paid; price was a shrug in one interview | the demand side of the marketplace is not there; Now stops (D02) | publish a priced offer to the test group; count paid bookings, separately from stated interest | founder A | 2 weeks from launch (launch date unknown) | untested |
-| A02 | Senior engineers who said "maybe" or "why not" will accept requests at a price mentees pay `[ASSUMPTION]` origin: two conditional interview answers | high | the Python speaker ("no w sumie czemu nie") and the staff engineer ("to bym może zrobiła") answered with conditions (setup under twenty minutes, see the question first, a high price they set, a link to share rather than a list); the first mentor was not asked about paid text sessions; the list is marked "not contacted" for all 50 although two listed people were interviewed, so it most likely means not invited | no supply; Now stops (D02) | invite the first batch of 20 from the warm contacts; count acceptances of real requests | founders | 2 weeks from launch (launch date unknown) | untested |
-| A03 | A bookable 25/50-minute slot meets the speed developers asked for `[ASSUMPTION]` origin: no material on lead time | high | developers named twenty minutes, an hour, the same day; the fintech blocker arose on a Friday at 18:00; the staff engineer answers between meetings and not at weekends; no data on when invited mentors can answer | the product needs on-demand answers or a response-time promise instead of a calendar; Now changes | record time from request to answer in the test | pending | with the test | untested |
+- A02: oferta płatnej konsultacji pasuje do problemu, z którym przychodzi deweloper. `[ASSUMPTION]` Wymaga obserwacji odpowiednich do decyzji o zakupie.
+- A04: dostępny termin pozwala uzyskać pomoc, gdy jest jeszcze użyteczna. `[ASSUMPTION]` Sama decyzja o wyprzedzeniu rezerwacji nie potwierdza dopasowania do sytuacji.
 
-## Kill criteria
+Te założenia określają obszar pytań koordynatora. Nie są opisem cech persony i nie powinny trafiać do jej kontekstu.
 
-Founder A's stop line is D02: within 2 weeks of launching the test platform, no mentor accepts a request, or the test group books no paid session despite declared interest. It is a stated intention, not an observed result. It does not say what counts as continuing (Q03), who is in the test group (Q01) or when the clock starts (Q02), and it does not test speed (A03).
+## Hypotheses
 
-## Hypotheses to test
+Źródła: [raport sesji 002](research/walkthroughs/2026-10-18-future-state-booking-and-session-1-0-decided-steps-session-002/report.md), profile po audycie względem notatek, i [raport sesji 001](research/walkthroughs/2026-10-18-future-state-booking-and-session-1-0-decided-steps-session-001/report.md). Sesja 002 koryguje 001: teza, że pilność i płacąca firma odwracają decyzję persony P02, opierała się na linii profilu bez podstawy w notatce i nie jest tu użyta. Obie sesje: stance adversary, narracyjny przepływ bez ekranów, jeden przebieg, dwie persony, każda z jednej notatki. Obie sesje używają tych samych dwóch notatek, więc nie są niezależnym potwierdzeniem. Status każdej hipotezy: Seen once.
 
-None. No synthetic walkthrough was run in this session.
+- H1 `[SYNTHETIC]` Sama kolejność po ostatnio opublikowanej dostępności (krok 2, D21) nie pozwala wskazać mentora, który robił dokładnie taki problem. Użytkownik wybrałby po znanym nazwisku albo odszedł. Zgłosiły to obie persony w obu sesjach (P01: „too thin for a decision”; P02: oceniłby po tym, „co zrobił”). Zastrzeżenie: persony nie widziały N02 (link do pracy publicznej i opis na stronie mentora), więc luka może leżeć w opisie przepływu, nie w produkcie. Dotyczy A02. Sprawdzenie: Collection plan, wpis 1.
+- H2 `[SYNTHETIC]` Zatrudniony deweloper płaciłby osobie tylko za zadanie jednorazowe, kosztujące dzień, znalezione w pięć minut i opłacone przez firmę. Notatka podaje te warunki bez kolejności, a opis kroku 3 nie mówi, kto płaci. Zgłosiła to tylko P02 (sesja 002, krok 3 i wybór C2). Dotyczy A02. Sprawdzenie: Collection plan, wpis 2.
+- H3 `[SYNTHETIC]` Brak ścieżki „żaden termin nie pasuje” (krok 4) kończy próbę u pilnego użytkownika. Obie persony zadały to pytanie w obu sesjach (P01: „an option to ask for help sooner than the published slots”; P02: „what happens if the mentor has no slot”). Że użytkownik by odszedł albo sprawdził innego mentora, mówi tylko P01 (wybór C3a). Tę samą hipotezę obejmuje minimalny start po rezerwacji kontra „within the hour” u P01 w obu sesjach; D22 sam mówi, że szybkości nie obiecuje. Dotyczy A04. Sprawdzenie: Collection plan, wpis 3.
 
 ## Open questions
 
 | Id | Question | Blocking | Who can answer | Status |
 |---|---|---|---|---|
-| Q01 | Who is in the test group, how many, how are they recruited, may founders' own contacts be paying mentees, and how is "declared interest" recorded? | yes: D02 cannot be read without it | founder A | open |
-| Q02 | When does the test platform launch (when does the two weeks start)? | yes: D02 has no clock | founder A, founder B | open |
-| Q03 | What result counts as continuing, and is a single paid booking enough? | no for building; yes for reading the result | founder A | open |
-| Q04 | How does a mentee reach a mentor: a public directory, or links the mentors share? The staff engineer refused a list; the platform developer wanted to find someone within five minutes and the fintech developer wanted booking to take under five. | yes: it shapes the booking flow | founder A | open |
-| Q05 | What does a mentor charge and how many hours a month can they give? (collection plan) | yes: price is needed before launch | the invited mentors | open |
-| Q06 | Who owns terms of service for both roles and handling pasted production code? The RACI has no one in the legal role; the interviewer's own unasked item was pasting production config to a stranger (the fintech developer said he would paste the yaml). | yes: before real payments | founder A by default | open |
-| Q08 | Does the test need the built platform, or could a manual offer (a payment link and a text chat) answer A01 to A03 first? | no | founder A | open |
-| Q07 | Pricing per mentor or per platform, and the commission (the board mentions 15 to 20%; Topmate shows 10% and 20%)? | no | founder A | open |
+| Q01 | Jak deweloper ocenia, czy mentor robił dokładnie taki problem? Lista jest filtrowana po tagu technologii i uporządkowana według ostatnio opublikowanej dostępności (D21). Link do pracy publicznej i opis na stronie mentora (N02) nie występują w Key flow. `[DOCUMENT]` [D21](research/decisions/D21-finding-a-mentor.md), [N02](research/decisions/N02-no-ratings.md) | nie dla Now (D28); tak dla planowania listy w Later | deweloperzy wybierający pomocnika; właściciel D21 | open |
+| Q02 | Kto płaci za sesję osoby zatrudnionej w firmie z kanałem wewnętrznym i na jakich warunkach firma zwraca koszt? Notatka zawiera wypowiedź warunkową („nie płacę za rzeczy do pracy sam”), nie zakup. Nie wiemy, co ta osoba robi, gdy kanał wewnętrzny nie odpowiada. `[INTERVIEW]` [platform-dev](research/2026-09-02-interview-platform-dev-solves-alone.md) | nie | deweloperzy platformowi w firmach z kanałem wewnętrznym | open |
+| Q03 | Co widzi użytkownik, gdy żaden opublikowany termin nie pasuje? Krok 4 tego nie opisuje; D22 mierzy czas od rezerwacji do startu, nie rezygnację. `[DOCUMENT]` [D22](research/decisions/D22-session-timing.md) | nie dla Now (D28); tak dla planowania ścieżki zapasowej w Later | właściciel D22; deweloperzy po blokadzie przed wydaniem | open |
 
-## Definition of Ready addendum (own)
-
-Problems and Target group have support from interviews and one Discord export (four developer accounts, one of which is a counter-case; the data comes from one community). That support does not show frequency beyond this community, or willingness to pay. Founder A decided Now (D01) and the stop line (D02); A01, A02 and A03 are untested and no one has accepted them as risks. The brief is ready for a named experiment: a priced text-session offer to a defined test group. It is not ready for implementation planning until Q01, Q02, Q04, Q05 and Q06 are answered.
+Wcześniejsze otwarte kwestie, bez id: znaczenie czasu opisanego w notatce, rzeczywista dostępność konkretnego mentora, cena konkretnej oferty oraz sposób podjęcia decyzji wymagają odpowiednich danych. Nie uzupełniamy ich fikcyjnymi wartościami.
 
 ## Collection plan
 
-### What do mentors charge, on which days and hours can they answer, how many hours a month will they give, and does their employer allow it?
+### Na co patrzysz, wybierając osobę do pomocy z problemem technicznym, i skąd wiesz, że zna ten problem?
 
-- What decision or work needs it: the price shown to mentees (R03), the supply side of A02 and the launch (Q05)
-- Who can answer it: the senior engineers on the invitation list, starting with those a founder knows personally
-- How: a short interview with each of the first invitees, using the interview note template
-- Owner and by when: unknown
-- Template: `.ai/specs/research/templates/interview-note.md`
+- What decision or work needs it: H1, Q01 (kształt listy, krok 2)
+- Who can answer it: deweloperzy, którzy w ostatnich miesiącach wybierali osobę do pomocy z problemem technicznym
+- How: rozmowa o ostatnim razie („Opowiedz o ostatnim razie…”). Drugorzędna sonda, tylko po części o przeszłości: pokazanie kolejności listy z profilem mentora (N02) i bez niego oraz pytanie, na co by patrzyli
+- Owner and by when: założyciel A (D28); termin unknown
+- Template: `research/templates/interview-note.md`
+
+### Kto zdecydował i zapłacił za pomoc osoby spoza zespołu ostatnim razem, jak to rozliczono, a gdy kanał wewnętrzny milczał, co zrobiłeś?
+
+- What decision or work needs it: H2, Q02 (krok 3, kto płaci)
+- Who can answer it: deweloperzy platformowi w firmach z kanałem wewnętrznym
+- How: rozmowa o ostatnim razie, z pytaniem o rozliczenie i o moment ciszy na kanale
+- Owner and by when: założyciel A (D28); termin unknown
+- Template: `research/templates/interview-note.md`
+
+### Opowiedz o ostatnim razie, gdy znaleziona pomoc była dostępna później, niż jej potrzebowałeś. Co zrobiłeś dalej?
+
+- What decision or work needs it: H3, Q03, A04 (krok 4)
+- Who can answer it: deweloperzy po blokadzie przed wydaniem, bez dostępnego seniora
+- How: rozmowa o ostatnim razie; pytanie sprawdza też, kiedy pomoc przestaje być użyteczna
+- Owner and by when: założyciel A (D28); termin unknown
+- Template: `research/templates/interview-note.md`
